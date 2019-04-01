@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "ScheduleForWeek";
+}
+
+<div class="row">
+    <div class="col-md-5">
+        <form method="post" action="scheduleForWeek">
+            <div>
+                <label>Форма для заполнения</label>
+            </div>
+            <div>
+                <label>
+                    Время начала
+                    <input type="text" name="startTime" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Гости шоу
+                    <input type="text" name="guestsEmployees" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="submit" value="Добавить" />
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-5">
+        Расписание
+        <table border="1px">
+            @{
+                for (int i = 0; i < 5; i++)
+                {
+                    <tr>
+                        <td>Время начала @i</td>
+                        <td>Гости шоу @i</td>
+                    </tr>
+                }
+            }
+        </table>
+        <div class="schedules"></div>
+    </div>
+</div>
